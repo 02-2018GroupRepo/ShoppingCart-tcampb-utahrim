@@ -40,13 +40,23 @@ public class ShoppingCart {
     }
 
     public void addProduct(ArrayList<Product> productArray, Product product) {
-        productArray.add(product);
-        product.setQuantity(product.getQuantity() - 1);
+        if (product.getQuantity() > 0) {
+            productArray.add(product);
+            product.setQuantity(product.getQuantity() - 1);
+        }
+        else {
+            System.out.println("There are no more " + product.getProductName() + "avaiable in the store");
+        }
     }
 
     public void removeProduct(ArrayList<Product> productArray, Product product){
-        productArray.remove(product);
-        product.setQuantity(product.getQuantity() + 1);
+        if (productArray.contains(product)) {
+            productArray.remove(product);
+            product.setQuantity(product.getQuantity() + 1);
+        }
+        else {
+            System.out.println("There is no " + product.getProductName() + " in your cart.");
+        }
     }
 }
 
