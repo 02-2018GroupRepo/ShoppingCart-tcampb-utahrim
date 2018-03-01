@@ -19,16 +19,11 @@ public class Main {
             int userInput = scanner.nextInt();
             //Validate userInput
             switch (userInput) {
-                case 5:
+                case 4:
                     cont = false;
                     break;
-                case 4:
-                    //removeItem()
-                    break;
                 case 3:
-                    Scanner scannerRemove = new Scanner(System.in);
-                    String input = scannerRemove.next();
-                    System.out.println("Please enter the product name: ");
+                    myCart.removeItemConsole();
                     break;
                 case 2:
                     storeSelection(storeArray, myCart);
@@ -51,7 +46,7 @@ public class Main {
         System.out.println("1 View Cart");
         System.out.println("2 Select Store");
         System.out.println("3 Remove item");
-        System.out.println("5 Exit");
+        System.out.println("4 Exit");
     }
 
     public static void storeSelection(Store[] storeArray, ShoppingCart myCart) {

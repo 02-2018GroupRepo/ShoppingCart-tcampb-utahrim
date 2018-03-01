@@ -1,5 +1,7 @@
 package com.company;
 
+import java.text.Format;
+
 public class Product {
 
     private String productName;
@@ -44,12 +46,9 @@ public class Product {
 
     @Override
     public String toString() {
-        return "Product{" +
-                "productName='" + productName + '\'' +
-                ", price=" + price +
-                ", quantity=" + quantity +
-                ", description='" + description + '\'' +
-                '}';
+        return productName + ": " +
+                price + "\n" +
+                description;
     }
 
     public void setDescription(String description) {
