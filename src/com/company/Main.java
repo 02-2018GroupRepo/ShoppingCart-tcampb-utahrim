@@ -26,10 +26,12 @@ public class Main {
                     //removeItem()
                     break;
                 case 3:
-                    //addItem()
+                    Scanner scannerRemove = new Scanner(System.in);
+                    String input = scannerRemove.next();
+                    System.out.println("Please enter the product name: ");
                     break;
                 case 2:
-                    storeSelection(storeArray);
+                    storeSelection(storeArray, myCart);
                     break;
                 case 1:
                     //viewCart()
@@ -45,12 +47,14 @@ public class Main {
     public static void printConsole() {
         System.out.println("1 View Cart");
         System.out.println("2 Select Store");
-        System.out.println("3 Add item");
-        System.out.println("4 Remove item");
+        System.out.println("3 Remove item");
         System.out.println("5 Exit");
     }
 
-    public static void storeSelection(Store[] storeArray) {
+    public static void storeSelection(Store[] storeArray, ShoppingCart myCart) {
+        Store blockbuster = storeArray[0];
+        Store circuitcity = storeArray[1];
+        Store kmart = storeArray[2];
         for (int i=0; i < storeArray.length; i++) {
             System.out.println(i + 1 + " " + storeArray[i].getVendorName());
         }
@@ -58,12 +62,31 @@ public class Main {
 
         Scanner scanner = new Scanner(System.in);
         int userInput = scanner.nextInt();
-
         switch (userInput) {
             case 4:
                 //clear console
                 System.out.println("\n\n\n\n\n\n");
                 break;
+            case 3:
+                System.out.println("\n\n\n\n\n\n");
+                System.out.println("Add to cart or press 4 to return to the previous screen: ");
+                Store.printStoreInventory(kmart, myCart);
+                break;
+            case 2:
+                System.out.println("\n\n\n\n\n\n");
+                System.out.println("Add to cart or press 4 to return to the previous screen: ");
+                Store.printStoreInventory(circuitcity, myCart);
+                break;
+            case 1:
+                System.out.println("\n\n\n\n\n\n");
+                System.out.println("Add to cart or press 4 to return to the previous screen: ");
+                Store.printStoreInventory(blockbuster, myCart);
+                break;
+            default:
+                System.out.println("\n\n\n\n\n\n");
+                System.out.println("Invalid value");
+                break;
+
         }
 
     }
