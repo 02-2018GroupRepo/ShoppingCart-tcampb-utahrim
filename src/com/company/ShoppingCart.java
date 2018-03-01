@@ -6,6 +6,7 @@ public class ShoppingCart {
     private ArrayList Product;
 
     public ShoppingCart(){};
+
     public ShoppingCart(ArrayList Product){
         this.Product = Product;
     }
@@ -20,16 +21,16 @@ public class ShoppingCart {
     }
 
 
-    public void viewCart(ArrayList<Product> productArray){
+    public void viewCart(ArrayList<Product> productArray) {
         try {
             for (Product product : productArray) {
-                System.out.println("Name:" + product.getProductName() + "\n" + "Price: $" + product.getQuantity() + "\n" + "Quantity: " + product.getQuantity() + "Description: " + product.getDescription());
+                System.out.println("Name:" + product.getProductName() + "\n" + "Price: $" + product.getQuantity() + "\n" + "Quantity: " + product.getQuantity() + "\n" + "Description: " + product.getDescription());
             }
             this.totalPrice(productArray);
         } catch (Exception e) {
-            System.out.println("Your shopping cart is currently empty.");
+            System.out.println("Cart is currently empty.");
         }
-    }
+        }
 
     public void totalPrice(ArrayList<Product> productArray){
         int total = 0;
