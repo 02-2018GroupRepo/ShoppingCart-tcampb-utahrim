@@ -1,8 +1,10 @@
 package com.company;
 
 import java.util.ArrayList;
+import java.util.Scanner;
 
 public class ShoppingCart {
+
     private ArrayList Product;
 
     public ShoppingCart(){};
@@ -24,9 +26,9 @@ public class ShoppingCart {
     public void viewCart(ArrayList<Product> productArray) {
         try {
             for (Product product : productArray) {
-                System.out.println("Name:" + product.getProductName() + "\n" + "Price: $" + product.getQuantity() + "\n" + "Quantity: " + product.getQuantity() + "\n" + "Description: " + product.getDescription());
+                System.out.println("Name: " + product.getProductName() + "\n" + "Price: $" + product.getQuantity() + "\n" + "Quantity: " + product.getQuantity() + "\n" + "Description: " + product.getDescription());
+                this.totalPrice(productArray);
             }
-            this.totalPrice(productArray);
         } catch (Exception e) {
             System.out.println("Cart is currently empty.");
         }
@@ -58,6 +60,17 @@ public class ShoppingCart {
         else {
             System.out.println("There is no " + product.getProductName() + " in your cart.");
         }
+    }
+
+    public void removeItemConsole() {
+        for (int i=0; i < this.getProduct().size(); i++) {
+            System.out.println(i + 1 + " " + this.getProduct().get(i).toString());
+        }
+
+        Scanner scanner = new Scanner(System.in);
+        int input = scanner.nextInt();
+        Product product = (Product) this.getProduct().get(input - 1);
+        this.removeProduct(this.getProduct(), product);
     }
 }
 
