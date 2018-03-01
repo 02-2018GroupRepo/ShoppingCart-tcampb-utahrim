@@ -21,10 +21,14 @@ public class ShoppingCart {
 
 
     public void viewCart(ArrayList<Product> productArray){
-        for (Product product: productArray) {
-            System.out.println("Name:" + product.getProductName() + "\n" + "Price: $" + product.getQuantity() + "\n" + "Quantity: " + product.getQuantity() + "Description: " + product.getDescription());
+        try {
+            for (Product product : productArray) {
+                System.out.println("Name:" + product.getProductName() + "\n" + "Price: $" + product.getQuantity() + "\n" + "Quantity: " + product.getQuantity() + "Description: " + product.getDescription());
+            }
+            this.totalPrice(productArray);
+        } catch (Exception e) {
+            System.out.println("Your shopping cart is currently empty.");
         }
-        this.totalPrice(productArray);
     }
 
     public void totalPrice(ArrayList<Product> productArray){

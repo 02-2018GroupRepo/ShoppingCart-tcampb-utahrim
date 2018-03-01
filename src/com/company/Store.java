@@ -1,5 +1,6 @@
 package com.company;
 import java.util.ArrayList;
+import java.util.Scanner;
 
 public class Store {
     private String vendorName;
@@ -32,6 +33,33 @@ public class Store {
         for (Product product: productArray) {
             System.out.println(product.getProductName() + " - " + product.getQuantity());
         }
+    }
+
+    public static void printStoreInventory(Store store, ShoppingCart myCart) {
+        ArrayList<Product> productList = store.getProducts();
+        System.out.println();
+        for (int i=0; i < productList.size(); i++) {
+            int numSelection = i + 1;
+            System.out.println(Integer.toString(numSelection) + " " + productList.get(i).toString());
+        }
+
+        Scanner scanner = new Scanner(System.in);
+        int userInput = scanner.nextInt();
+
+        switch (userInput) {
+            case 1:
+                myCart.addProduct(myCart.getProduct(), productList.get(0));
+                break;
+            case 2:
+                myCart.addProduct(myCart.getProduct(), productList.get(1));
+                break;
+            case 3:
+                myCart.addProduct(myCart.getProduct(), productList.get(2));
+                break;
+            default:
+                System.out.println("Invalid selection");
+        }
+
     }
 
     public static Store[] generateStores() {
