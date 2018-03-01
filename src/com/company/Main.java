@@ -34,7 +34,10 @@ public class Main {
                     storeSelection(storeArray, myCart);
                     break;
                 case 1:
-                    //viewCart()
+                    System.out.println("\n\n\n\n\n");
+                    System.out.println("Press enter to return to previous screen");
+                    myCart.viewCart(myCart.getProduct());
+                    Scanner exit = new Scanner(System.in);
                     break;
                 default:
                     System.out.println("Invalid value");
