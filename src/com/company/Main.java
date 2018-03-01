@@ -8,11 +8,8 @@ public class Main {
     public static void main(String[] args) {
         //Create stores
         Store[] storeArray = Store.generateStores();
-        Product placeholder = new Product("", 0, 0, "");
-        ArrayList<Product> placeHolderArray = new ArrayList<Product>();
-        placeHolderArray.add(placeholder);
-        ShoppingCart myCart = new ShoppingCart(placeHolderArray);
-
+        ArrayList<Product> placeholder = new ArrayList<Product>();
+        ShoppingCart myCart = new ShoppingCart(placeholder);
 
         boolean cont = true;
         do {
