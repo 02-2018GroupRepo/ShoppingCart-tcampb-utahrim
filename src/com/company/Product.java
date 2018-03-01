@@ -1,6 +1,7 @@
 package com.company;
 
 public class Product {
+
     private String productName;
     private double price;
     private int quantity;

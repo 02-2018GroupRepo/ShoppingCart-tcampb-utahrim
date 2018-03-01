@@ -1,12 +1,15 @@
 package com.company;
+
 import java.util.ArrayList;
 
 public class ShoppingCart {
     private ArrayList Product;
 
+    public ShoppingCart(){};
     public ShoppingCart(ArrayList Product){
         this.Product = Product;
     }
+
 
     public ArrayList getProduct() {
         return Product;
@@ -15,6 +18,7 @@ public class ShoppingCart {
     public void setProduct(ArrayList product) {
         Product = product;
     }
+
 
     public void viewCart(ArrayList<Product> productArray){
         for (Product product: productArray) {
@@ -41,3 +45,4 @@ public class ShoppingCart {
         product.setQuantity(product.getQuantity() + 1);
     }
 }
+
